@@ -46,7 +46,8 @@ INSTALLED_APPS = [
 
     # project app
     'users',
-    'gateway'
+    'gateway',
+    'data_manager'
 ]
 
 MIDDLEWARE = [
