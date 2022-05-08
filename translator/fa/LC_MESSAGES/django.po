@@ -22,3 +22,26 @@ msgstr "کاربران"
 
 msgid "username"
 msgstr "نام کاربری"
+
+msgid "mac address"
+msgstr "آدرس مک"
+
+msgid "gateway"
+msgstr "گیت وی"
+
+msgid "gateways"
+msgstr "گیت وی ها"
+
+msgid "temperature sensor"
+msgstr "سنسور دما"
+
+msgid "temperature sensors"
+msgstr "سنسورهای دما"
+
+msgid "sensor"
+msgstr "سنسور"
+
+msgid "sensors"
+msgstr "سنسورها"
+
+
