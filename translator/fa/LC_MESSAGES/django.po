@@ -44,4 +44,18 @@ msgstr "سنسور"
 msgid "sensors"
 msgstr "سنسورها"
 
+msgid "humidity"
+msgstr "رطوبت"
+
+msgid "brightness"
+msgstr "شدت روشنایی"
+
+msgid "created at"
+msgstr "ساخته شده در"
+
+msgid "sensor data"
+msgstr "دیتای سنسور"
+
+
+
 
