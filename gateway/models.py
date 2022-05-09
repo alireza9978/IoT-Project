@@ -3,6 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Gateway(models.Model):
+    name = models.CharField(max_length=150, null=True, blank=True, verbose_name=_("name"))
     mac_address = models.CharField(unique=True, max_length=150, verbose_name=_("mac address"))
 
     class Meta:

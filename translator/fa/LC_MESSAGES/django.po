@@ -56,6 +56,7 @@ msgstr "ساخته شده در"
 msgid "sensor data"
 msgstr "دیتای سنسور"
 
-
+msgid "name"
+msgstr "نام"
 
 
