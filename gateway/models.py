@@ -15,6 +15,7 @@ class Gateway(models.Model):
 
 
 class Sensor(models.Model):
+    mac = models.CharField(primary_key=True, max_length=150, unique=True, verbose_name=_("mac address"))
     gateway = models.ForeignKey(Gateway, on_delete=models.CASCADE, verbose_name=_("gateway"), related_name="sensors")
 
     class Meta:
@@ -22,4 +23,4 @@ class Sensor(models.Model):
         verbose_name_plural = _("sensors")
 
     def __str__(self):
-        return f'{self.gateway} - {self.id}'
+        return f'{self.gateway} - {self.mac}'

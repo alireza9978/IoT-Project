@@ -12,4 +12,4 @@ class GatewayAdmin(admin.ModelAdmin):
 @admin.register(Sensor)
 class SensorAdmin(admin.ModelAdmin):
     model = Sensor
-    list_display = ['id', 'gateway']
+    list_display = ['mac', 'gateway']

@@ -9,7 +9,7 @@ class SensorData(models.Model):
     temperature = models.IntegerField(verbose_name=_("temperature"))
     humidity = models.IntegerField(verbose_name=_("humidity"))
     brightness = models.IntegerField(verbose_name=_("brightness"))
-    created_at = models.DateTimeField(auto_now_add=True, verbose_name=_("created at"))
+    time = models.CharField(max_length=150, verbose_name=_("time"))
 
     class Meta:
         verbose_name = _("sensor data")
