@@ -16,4 +16,4 @@ class SensorData(models.Model):
         verbose_name_plural = _("sensor data")
 
     def __str__(self):
-        return f'{self.sensor} - {self.created_at}'
+        return f'{self.sensor} - {self.time}'
