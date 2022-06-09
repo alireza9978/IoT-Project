@@ -195,3 +195,8 @@ else:
         'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
         'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
     }
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
