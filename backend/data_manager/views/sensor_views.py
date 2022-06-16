@@ -1,24 +1,34 @@
-from rest_framework import mixins, status
-from rest_framework.permissions import AllowAny
+from django.utils.translation import gettext_lazy as _
+from rest_framework import mixins, status, serializers
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from data_manager.models import SensorData
-from data_manager.serializers import SensorSerializer
+from gateway.models import Sensor
 
 
 class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
-    permission_classes = [AllowAny]
-    serializer_class = SensorSerializer
+    class SensorDataInputSerializer(serializers.ModelSerializer):
+        class Meta:
+            model = SensorData
+            fields = ['voltage', 'current', 'time']
+
+    permission_classes = [IsAuthenticated]
+    serializer_class = SensorDataInputSerializer
     queryset = SensorData.objects.none()
 
     def create(self, request, *args, **kwargs):
         try:
-            for data in request.data['data']:
+            sensor = Sensor.objects.get(mac=request.data['sensor_mac'])
+            if sensor.user != self.request.user:
+                return Response(data={"errors": _("you do not have access to this sensor")},
+                                status=status.HTTP_400_BAD_REQUEST)
+            for data in request.data['sensor_data']:
                 try:
                     serializer = self.get_serializer(data=data)
                     serializer.is_valid(raise_exception=True)
-                    self.perform_create(serializer)
+                    serializer.save(sensor=sensor)
                 except Exception as e:
                     print(e.args)
         except Exception as e:

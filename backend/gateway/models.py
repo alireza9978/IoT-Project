@@ -5,7 +5,7 @@ from users.models import User
 
 
 class Sensor(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("user"))
+    user = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name=_("user"))
     mac = models.CharField(primary_key=True, max_length=150, unique=True, verbose_name=_("mac address"))
 
     class Meta:

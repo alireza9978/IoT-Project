@@ -59,4 +59,11 @@ msgstr "دیتای سنسور"
 msgid "name"
 msgstr "نام"
 
+msgid "voltage"
+msgstr "ولتاژ"
 
+msgid "current"
+msgstr "جریان"
+
+msgid "you do not have access to this sensor"
+msgstr "شما توانایی دسترسی به این سنسور را ندارید"
