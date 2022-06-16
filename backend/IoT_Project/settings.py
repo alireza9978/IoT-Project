@@ -187,12 +187,12 @@ LOCALE_PATHS = [
 if DEBUG:
     from datetime import timedelta
     SIMPLE_JWT = {
-        'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60*24*7)
+        'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60*24*365)
     }
 else:
     from datetime import timedelta
     SIMPLE_JWT = {
-        'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+        'ACCESS_TOKEN_LIFETIME': timedelta(days=365),
         'REFRESH_TOKEN_LIFETIME': timedelta(days=365),
     }
 
