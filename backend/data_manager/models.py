@@ -6,10 +6,9 @@ from gateway.models import Sensor
 
 class SensorData(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, verbose_name=_("sensor"))
+    voltage = models.FloatField(verbose_name=_("voltage"))
+    current = models.FloatField(verbose_name=_("voltage"))
 
-    temperature = models.IntegerField(verbose_name=_("temperature"))
-    humidity = models.IntegerField(verbose_name=_("humidity"))
-    brightness = models.IntegerField(verbose_name=_("brightness"))
     time = models.CharField(max_length=150, verbose_name=_("time"))
 
     class Meta:
