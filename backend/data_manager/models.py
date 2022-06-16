@@ -6,6 +6,7 @@ from gateway.models import Sensor
 
 class SensorData(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, verbose_name=_("sensor"))
+
     temperature = models.IntegerField(verbose_name=_("temperature"))
     humidity = models.IntegerField(verbose_name=_("humidity"))
     brightness = models.IntegerField(verbose_name=_("brightness"))

@@ -1,14 +1,14 @@
 from rest_framework import mixins, status
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from rest_framework.viewsets import GenericViewSet
 
 from data_manager.models import SensorData
 from data_manager.serializers import SensorSerializer
-from gateway.permissions import IsGateway
 
 
 class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
-    permission_classes = [IsGateway]
+    permission_classes = [AllowAny]
     serializer_class = SensorSerializer
     queryset = SensorData.objects.none()
 
