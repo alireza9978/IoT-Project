@@ -14,6 +14,7 @@ class SensorModelViewSet(ModelViewSet):
     permission_classes = [IsAuthenticated]
     queryset = Sensor.objects.none()
     serializer_class = SensorSerializer
+    filterset_fields = ['user']
 
     def get_queryset(self):
         return Sensor.objects.filter(user=self.request.user)
