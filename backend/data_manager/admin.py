@@ -6,4 +6,4 @@ from data_manager.models import SensorData
 @admin.register(SensorData)
 class SensorDataAdmin(admin.ModelAdmin):
     model = SensorData
-    list_display = ['sensor', 'time', 'voltage', 'current']
+    list_display = ['sensor', 'time', 'energy']

@@ -12,7 +12,7 @@ class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
     class SensorDataInputSerializer(serializers.ModelSerializer):
         class Meta:
             model = SensorData
-            fields = ['voltage', 'current', 'time']
+            fields = ['energy', 'time']
 
     permission_classes = [IsAuthenticated]
     serializer_class = SensorDataInputSerializer
