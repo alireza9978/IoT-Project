@@ -16,8 +16,8 @@ class SensorModelViewSet(ModelViewSet):
     serializer_class = SensorSerializer
     filterset_fields = ['user']
 
-    def get_queryset(self):
-        return Sensor.objects.filter(user=self.request.user)
+    # def get_queryset(self):
+    #     return Sensor.objects.filter(user=self.request.user)
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
