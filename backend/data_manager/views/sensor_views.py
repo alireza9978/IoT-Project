@@ -10,18 +10,21 @@ from gateway.models import Sensor
 
 
 class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
-    time = serializers.CharField()
+    time = serializers.CharField(required=True)
+    energy = serializers.FloatField(required=True)
 
-    class SensorDataInputSerializer(serializers.ModelSerializer):
+    class SensorDataInputSerializer(serializers.Serializer):
         class Meta:
-            model = SensorData
+            # model = SensorData
             fields = ['energy', 'time']
 
-    def validate_time(self, value):
-        try:
-            return datetime.fromtimestamp(value)
-        except Exception as e:
-            raise serializers.ValidationError(e.args)
+    # def validate_time(self, value):
+    #     try:
+    #         print("1111111")
+    #         return datetime.fromtimestamp(value)
+    #     except Exception as e:
+    #         print("2222")
+    #         raise serializers.ValidationError(e.args)
 
     permission_classes = [IsAuthenticated]
     serializer_class = SensorDataInputSerializer
@@ -37,7 +40,8 @@ class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
                 try:
                     serializer = self.get_serializer(data=data)
                     serializer.is_valid(raise_exception=True)
-                    serializer.save(sensor=sensor)
+                    SensorData.objects.create(sensor=sensor, energy=float(data['energy']), time=datetime.fromtimestamp(int(data['time'])))
+                    # serializer.save(sensor=sensor)
                 except Exception as e:
                     print(e.args)
         except Exception as e:
