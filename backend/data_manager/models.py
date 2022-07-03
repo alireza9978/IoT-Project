@@ -8,7 +8,7 @@ class SensorData(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE, verbose_name=_("sensor"))
     energy = models.FloatField(verbose_name=_("energy"))
 
-    time = models.CharField(max_length=150, verbose_name=_("time"))
+    time = models.DateTimeField(verbose_name=_("time"))
 
     class Meta:
         verbose_name = _("sensor data")
