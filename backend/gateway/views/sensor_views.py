@@ -12,7 +12,7 @@ class SensorModelViewSet(ModelViewSet):
             exclude = ['user']
 
     permission_classes = [IsAuthenticated]
-    queryset = Sensor.objects.none()
+    queryset = Sensor.objects.all()
     serializer_class = SensorSerializer
     filterset_fields = ['user']
 
