@@ -32,7 +32,7 @@ class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
 
     def create(self, request, *args, **kwargs):
         try:
-            sensor = Sensor.objects.get(mac=request.data['sensor_mac'])
+            sensor, temp = Sensor.objects.get_or_create(mac=request.data['sensor_mac'], user=request.user)
             if sensor.user != self.request.user:
                 return Response(data={"errors": _("you do not have access to this sensor")},
                                 status=status.HTTP_400_BAD_REQUEST)
