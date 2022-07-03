@@ -1,3 +1,4 @@
+from datetime import datetime
 from django.utils.translation import gettext_lazy as _
 from rest_framework import mixins, status, serializers
 from rest_framework.permissions import IsAuthenticated
@@ -9,10 +10,18 @@ from gateway.models import Sensor
 
 
 class SensorReceiveDataViewSet(mixins.CreateModelMixin, GenericViewSet):
+    time = serializers.CharField()
+
     class SensorDataInputSerializer(serializers.ModelSerializer):
         class Meta:
             model = SensorData
             fields = ['energy', 'time']
+
+    def validate_time(self, value):
+        try:
+            return datetime.fromtimestamp(value)
+        except Exception as e:
+            raise serializers.ValidationError(e.args)
 
     permission_classes = [IsAuthenticated]
     serializer_class = SensorDataInputSerializer
