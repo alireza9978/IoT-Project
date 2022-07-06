@@ -22,9 +22,15 @@ class ProfileView(RetrieveModelMixin, UpdateModelMixin, GenericViewSet):
 class AdminUserViewSet(ModelViewSet):
     queryset = User.objects.all()
     serializer_class = AdminUserSerializer
-    permission_classes = [IsAdminUser]
+    permission_classes = [IsAuthenticated]
     filterset_class = UserAdminFilter
     search_fields = ['username', 'phone_number', 'name']
+
+    def get_queryset(self):
+        if self.request.user.is_admin:
+            return User.objects.all()
+        else:
+            return User.objects.filter(id=self.request.user.id)
 
     @action(detail=True, methods=['post'])
     def activate(self, request, pk):
