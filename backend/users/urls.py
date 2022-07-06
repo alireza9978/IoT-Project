@@ -7,7 +7,7 @@ from users.views import profile_views
 router = DefaultRouter()
 
 router.register('admin/users', profile_views.AdminUserViewSet, basename='admin_user')
-router.register('admin/profile')
+router.register('admin/profile', profile_views.ProfileView, basename='profile')
 
 urlpatterns = [
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
