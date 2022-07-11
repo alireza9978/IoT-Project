@@ -23,7 +23,7 @@ class SensorModelViewSet(ModelViewSet):
     filterset_fields = ['user']
 
     def get_queryset(self):
-        if self.request.user.is_admin:
+        if not self.request.user.is_admin:
             return Sensor.objects.filter(user=self.request.user)
         return Sensor.objects.all()
 
