@@ -59,7 +59,7 @@ class SensorDataView(ModelViewSet):
             model = SensorData
             fields = '__all__'
 
-    queryset = SensorData.objects.all()
+    queryset = SensorData.objects.all().order_by('-time')
     permission_classes = [IsAuthenticated]
     serializer_class = SensorDataSerializer
     filterset_fields = ['sensor', 'sensor__user']
