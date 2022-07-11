@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT</title>
+    <link rel="stylesheet" href="assets/css/login.css">
+</head>
+<body>
+    <div class="back"></div>
+    <div class="container">
+        <div class="login">
+            <div class="title">
+                <h3>ورود</h3>
+            </div>
+            <div class="body-login">
+                <div class="error-box">
+                    <p>نام کاربری با رمز عبور مطابقت ندارد</p>
+                </div>
+                <label for="user_input">نام کاربری</label>
+                <input type="username" placeholder="نام کاربری" id="username_input" required>
+                <label for="password_input">رمز عبور</label>
+                <input type="password" name="" id="password_input" placeholder="رمزعبور" required>
+                <div class="info"> 
+                        <input type="checkbox" name="" id="remember-me">
+                        <label for="remember-me" >مرا به خاطر بسپار</label>                   
+                </div>
+                <button type="submit" onclick="login()">ورود</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

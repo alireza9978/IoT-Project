@@ -1,0 +1,43 @@
+.table-responsive table th {
+    border: none;
+    color: black;
+}
+.table-responsive{
+    color: black;
+}
+.table-responsive tr{
+    text-align: center;
+    border: 1px solid #dee2e6;
+
+}
+.table-responsive tr td{
+    border: none;
+    /* border-right: none; */
+}
+.table-striped tbody tr:nth-of-type(odd){
+    background-color: inherit;
+}
+.modal{
+    color: black;
+    text-align: right;
+}
+.modal-header{
+    align-items: flex-start;
+
+}
+.star_span{
+    color: red;
+}
+
+.openPage{
+    cursor: pointer;
+}
+#consumption{
+    width: 95vw;
+    margin-top: 2rem;
+    display: flex;
+
+}
+#consumption .box1{
+    height: 100px;
+}

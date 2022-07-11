@@ -1,0 +1,725 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+.page{
+  
+    scroll-snap-align: start;
+    padding-top: 2.5rem;
+    
+    
+}
+
+
+.bg-img{
+    background-image: url("../img/image_back.jpg");
+    /* filter: blur(8px);
+  -webkit-filter: blur(8px); */
+    position: absolute;
+    top: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+    margin-left: 3rem;
+  
+  /* Full height */
+  height: 100%; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    background-color: #14213d;
+    color: white;
+    font-family: iran-sans;
+    overflow-x: hidden;
+}
+.title{
+    color: #fca311;
+}
+body .sidenav{
+    display: flex;
+    flex-direction: column;
+    width: 10vw;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #14213d;
+}
+body .sidenav .side-nav-photo{
+    width: 100%;
+}
+body .sidenav .side-nav-photo img{
+    width: 100%;
+}
+body .sidenav a{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-decoration: none;
+    color: white;
+    margin:  1.65rem 0 0 0; 
+}
+
+body .sidenav a i{
+    margin:  0 0 0.5rem 0;
+}
+body .container.file{
+    margin-left: 10rem;
+}
+body .container.main{
+    gap: 20px;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-padding: 1rem;
+    max-height: 100vh;
+    margin: 0 0;
+    width: 100vw;
+}
+body .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12rem;
+    
+    
+}
+
+
+body .container .page:first-child{
+    /* margin-top: 400vh; */
+}
+body .container .nav{
+    width: 100vw;
+    margin-bottom: 4.5rem;
+    position: absolute;
+    top: 0;
+    
+}
+body .container .nav img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+}
+
+
+body .container .company-name{
+    position: absolute;
+    /* top: 5rem; */
+    bottom: 2rem;
+    left: 1.6rem;
+    text-align: center;
+    font-size: 0.85rem;
+    width: 15rem;
+    color: black;
+}
+
+body .container .title.main{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+body .container .title.main h2{
+    font-size: 3.3rem;
+    margin-bottom: 2rem;
+    font-family: iran_sans_bold;
+}
+body .container .title h5{
+    font-size: 1.15rem;
+}
+body .container .title h4{
+    font-size: 1.5rem;
+}
+body .container .title div{
+    height: 70vh;
+    width: 60vw;
+    margin: 2rem 0;
+    overflow-y: hidden;
+}
+body .container .title div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+body .container  .title {
+    position: relative;
+    padding-bottom: 2rem;
+    margin: 2rem 0;
+}
+body .container  .title h4::before {
+    content: "";
+    width: 20%;
+    height: 5px;
+    position: absolute;
+    background-image: linear-gradient(to right ,rgba(253,212,144,1),rgba(252,163,17,1));
+   
+    top: 2.5rem;
+   
+}
+.container #submit-file-div{
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+    width: 70vw;
+}
+
+body .container .information{
+    width: 80vw;
+}
+body .container .information .inf-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+body .container .information .inf-body .description-text{
+    text-align: justify;
+}
+body .container .information .inf-body .description-text .title.state .circle{
+    content: " ";
+    border-radius: 50%;
+    background-color: #fca311;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid #fca311;
+    display: inline-block;
+    margin-left: 5px;
+
+}
+
+body .container .information .inf-body .boxs{
+    display: flex;
+    column-gap: 2em;
+    margin-top: 3em;
+}
+body .container .information .inf-body .boxs .box{
+    width: 13em;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    color: #14213d;
+    
+}
+body .container .information .inf-body .box div:first-child {
+    height: 3em;
+    width: 3em;
+}
+body .container .information .inf-body .box div h5{
+    margin-top: 1.2rem;
+}
+body .container .information .inf-body .box div img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+body .container .page button#login_btn , #logout_btn{
+    text-decoration: none;
+    cursor: pointer;
+    width: 7rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #fca311;
+    color: black;
+    display: inline;
+    position: absolute;
+    left: 2rem;
+    top: 10rem;
+}
+body .container .page button#login_btn , #users_btn{
+    text-decoration: none;
+    cursor: pointer;
+    width: 7rem;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    background-color: #fca311;
+    color: black;
+    display: inline;
+    position: absolute;
+    left: 2rem;
+    top: 5rem;
+}
+body .container .sample-diagnostic{
+    width: 80vw;
+    margin-top: 10rem;
+}
+
+body .container .sample-diagnostic .diag-body{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+body .container .sample-diagnostic .diag-body .mySlides{
+    width: 60%;
+    box-sizing: border-box;
+    margin: 1rem;
+    display: none;
+    transition: 0.4s ease;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+body .container .sample-diagnostic .diag-body div img{
+    width: 100%;
+    object-fit: fill;
+}
+
+body .container .sample-diagnostic .diag-body .button.black{
+    width: 1.8rem;
+    height: 1.8rem;
+    user-select: none;
+    font-weight: bolder;
+    background-color: none;
+    color: black;
+    text-align: center;
+    font-weight: bolder;
+    font-size: larger;
+    transition: 0.6s ease;
+    border-radius: 0.3rem;
+  }
+  body .container .sample-diagnostic .diag-body .button.black:hover{
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+  }
+  body .container .sample-diagnostic .diag-body .button.black.display-left{
+    position: absolute;
+    top: 50%;
+    left: 16%;
+  }
+  body .container .sample-diagnostic .diag-body  .button.black.display-right{
+    position: absolute;
+    top: 50%;
+    right: 16%;
+  }
+  body .container .sample-diagnostic .diag-body .mySlides.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+
+
+body .container .contact-us{
+    width: 80vw;
+    margin-bottom: 11.5rem;
+}
+body .container .contact-us .cont-body{
+    display: flex;
+    
+    font-size: 0.9rem;
+}
+body .container .contact-us .cont-body .right-col , body .container .contact-us .cont-body .left-col{
+    flex-basis: 50%;
+}
+
+body .container .contact-us .cont-body div>i{
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+body .container .contact-us .cont-body div>p{
+    font-size: 0.75rem;
+    margin: 1rem 0;
+}
+body .container .contact-us .cont-body input , body .container .contact-us .cont-body textarea{
+    width: 60%;
+    height: 2rem;
+    margin-bottom: 0.9rem;
+    border: none;
+    padding: 0.3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1.5px solid white;
+    background-color: inherit;
+    box-sizing: border-box;
+}
+body .container .contact-us .cont-body input::placeholder , body .container .contact-us .cont-body textarea::placeholder{
+    color: white;
+    font-size: 1rem;
+    font-family: iran-sans;
+}
+body .container .contact-us .cont-body input:focus , body .container .contact-us .cont-body textarea:focus{
+    color: white;
+}
+body .container .contact-us .cont-body .input-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body .container .contact-us .cont-body input[type = "email"]:focus{
+    direction: ltr;
+    color: white;
+}
+body .container .contact-us .cont-body input[type = "email"]::placeholder{
+    text-align: right;
+}
+body .container .contact-us .cont-body textarea{
+    height: 7rem;
+}
+body .container .contact-us .cont-body .input-box button[type = submit]{
+    border: none;
+    height: 2rem;
+    background-color: #fca311;
+   
+    border-radius: 15px;
+    color: #14213d ;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    outline: none;
+
+    margin: 0.5rem;
+    margin-top: 0;
+    width: 10rem;
+    box-sizing: border-box;
+}
+body .container .contact-us .cont-body .input-box button[type = submit]:hover{
+    width: 12rem;
+}
+body .container .contact-us .cont-body .social-media{
+    color: black;
+    margin-top: 2.7rem;
+}
+body .container .contact-us .cont-body .social-media a>i{
+    color: black;
+    font-size: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+body .container .about-us{
+    width: 80vw;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+}
+body .container .about-us-body{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-right: 1.5rem;
+}
+body .container .about-us-body .person{
+    flex-basis: 22%;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+body .container .about-us-body .person>div{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+body .container .about-us-body .person>div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 50%;
+}
+body .container .about-us-body .person h5 , body .container .about-us-body .person p{
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+body .nav-number{
+    position: relative;
+    margin: 3rem;
+    margin-right: 20%;
+    margin-top: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+body .nav-number::before{
+    content: "";
+    width: 74%;
+    height: 10px;
+    border-bottom: 3.5px solid rgba(229, 229, 229,0.5);
+    position: absolute;
+    top: 16%;
+    right: 4%;
+}
+body .nav-number .page-number{
+    flex-basis: 25%;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+body .nav-number .page-number.center{
+    align-items: center;
+    justify-content: center;
+}
+body .nav-number .page-number.last{
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+body .nav-number .page-number a{
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.25rem;
+    color: #fca311;
+
+    
+}
+body .nav-number .page-number a>div{
+    position: relative;
+    border-radius: 50%;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: white;
+    overflow-y: hidden;
+
+}
+ body .nav-number .page-number a>div>img{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+
+
+}
+body .nav-number .page-number a>div>i{
+    position: absolute;
+    top: 20%;
+    right: 30%;
+}
+body .nav-number .page-number a>div>img{
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+    
+}
+body .container .upload-file-box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+body .container .upload-file-box div{
+    margin: 1rem ;
+    flex-basis: 40%;
+    
+}
+body .container .upload-file-box #upload_file_label{
+    background-color: #fca311;
+    display: inline-block;
+    padding: 0.6rem;
+    cursor: pointer;
+    color: #14213d;
+    border-radius: 5px;
+}
+body .container .upload-file-box #empty_upload_file , #demo_upload_file{
+    visibility: hidden;
+    background-color: red;
+    display: inline-block;
+    padding: 0.6rem;
+    color: #14213d;
+    border-radius: 5px;
+}
+body .container .upload-file-box #myFile{
+    visibility: hidden;
+}
+.filter_box{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.filter_box div{
+    margin: 1rem ;
+    /* flex-basis: 40%; */
+}
+#header_filter{
+    font-size: 1.3rem;
+}
+
+
+body .container .submit_file[type = submit]{
+    font-size: 1rem;
+    color: #14213d;
+    border-radius: 5px;
+    width: 2.5rem;
+    height: 2rem;
+    border: none;
+    background-color: #fca311;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    outline: none;
+    font-family: inherit;
+    text-decoration: none;
+
+    float: left;
+    width: 4rem;
+}
+body .container .submit_file[type = submit]:hover{
+    width: 5rem;
+}
+
+body .container .checkmark-label label{
+    display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  
+}
+body .container .checkmark-label label input{
+    position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  body .container .checkmark-label label:hover body .container .checkmark-label label input ~ .checkmark {
+    background-color: #ccc;
+  }
+  body .container .checkmark-label label input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  body .container .checkmark-label label input:checked ~ .checkmark:after {
+    display: block;
+  }
+  body .container .checkmark-label label .checkmark:after {
+    top: 9px;
+   left: 9px;
+   width: 8px;
+   height: 8px;
+   border-radius: 50%;
+   background: white;
+}
+
+body .container  .error-box , #error{
+    color: red;
+    padding: 2rem;
+    overflow-y: hidden;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+body .container  .error-box a , body .container  .success-submit div a , .continue-btn{
+    border: none;
+    text-decoration: none;
+    width: 5rem;
+    margin-top: 1.5rem;
+    padding: 0.5rem;
+    background-color: #fca311;
+    border-radius: 15px;
+    color: #14213d ;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    text-align: center;
+}
+body .container  .error-box a:hover , body .container  .success-submit div a:hover , .continue-btn:hover{
+    width: 6.5rem;
+}
+body .container  .success-submit{
+
+}
+body .container  .success-submit div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+body .container  .success-submit div a i{
+    font-size: 1.15rem;
+}
+.modal-dialog{
+    width: 60vw;
+    margin-left: 45rem;
+}
+.modal-content{
+    width: 60vw;
+}
+
+
+body .container .form-input{
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 2rem;
+   
+}
+body .container .form-input div{
+  
+    margin-bottom: 1rem;
+}
+body .container .form-input div input{
+    width: 3.5rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.2);
+    margin-right: 0.5rem;
+}
+body .container .form-input label{
+    width: 10rem;
+    display: inline-block;
+   
+}
+
+#default-core{
+    visibility: hidden;
+}
+
+
+
+
+
+
+  
